@@ -32,10 +32,14 @@ type Model struct {
 }
 
 type feedbackResult struct {
-	feedbackTotal, feedbackPositive, feedbackNegative, feedbackNeutral int
+	feedbackTotal    int
+	feedbackPositive int
+	feedbackNegative int
+	feedbackNeutral  int
 }
 
 var vehicleResult map[string]feedbackResult
+
 var inventory []vehicle
 
 type rating float32
@@ -62,6 +66,7 @@ func init() {
 		car{"Camry", "Toyota", "Sedan"},
 		truck{"F-150", "Ford", "Truck"},
 		truck{"RAM1500", "Dodge", "Truck"}}
+
 	vehicleResult = make(map[string]feedbackResult)
 
 }
